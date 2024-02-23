@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Půjčovna kol</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Půjčovna kol</h1>
+      <form>
+        <!-- typy kol -->
+        <fieldset class="fs">
+          <legend>Typ kola</legend>
+          <div class="one-line">
+            <input type="checkbox" id="horske" name="horske" />
+            <label for="horske">horské kolo => cena 500 Kč/den</label>
+            <input
+              type="number"
+              name="horske-ks"
+              min="0"
+              max="50"
+              placeholder="ks"
+              disabled
+            />
+          </div>
+          <div class="one-line">
+            <input type="checkbox" id="detske" name="detske" />
+            <label for="detske">dětské kolo => cena 200 Kč/den</label>
+            <input
+              type="number"
+              name="horske-ks"
+              min="0"
+              max="50"
+              placeholder="ks"
+              disabled
+            />
+          </div>
+          <div class="one-line">
+            <input type="checkbox" id="silnicni" name="silnicni" />
+            <label for="silnicni">silniční kolo => cena 1 500 Kč/den</label>
+            <input
+              type="number"
+              name="silnicni-ks"
+              min="0"
+              max="50"
+              placeholder="ks"
+              disabled
+            />
+          </div>
+          <div class="one-line">
+            <input type="checkbox" id="gravel" name="gravel" />
+            <label for="gravel">gravel => cena 2 500 Kč/den</label>
+            <input
+              type="number"
+              name="gravel-ks"
+              min="0"
+              max="10"
+              placeholder="ks"
+              disabled
+            />
+          </div>
+        </fieldset>
+
+        <!-- doba zápůjčky -->
+        <fieldset class="fs fs2">
+          <legend>Doba zapůjčení</legend>
+          <select name="pocet-dnu" id="pocet-dnu" class="select">
+            <option value="2" selected>2 dny</option>
+            <option value="5">5 dnů</option>
+            <option value="14">14 dní</option>
+            <option value="30">30 dní</option>
+          </select>
+        </fieldset>
+
+        <!-- cyklonosič -->
+        <fieldset class="fs">
+          <legend>Další vybavení</legend>
+          <div class="one-line">
+            <input
+              type="radio"
+              id="cyklonosic-zadny"
+              value="zadne"
+              name="cyklonosic"
+              checked
+            />
+            <label for="cyklonosic-zadny">žádný cyklonosič</label>
+          </div>
+          <div class="one-line">
+            <input
+              type="radio"
+              id="cyklonosic-stresni"
+              value="stresni"
+              name="cyklonosic"
+            />
+            <label for="cyklonosic-stresni"
+              >cyklonosič střešní (+ 5% z celkové ceny)</label
+            >
+          </div>
+          <div class="one-line">
+            <input
+              type="radio"
+              id="cyklonosic-tazne"
+              value="tazne"
+              name="cyklonosic"
+            />
+            <label for="cyklonosic-tazne"
+              >cyklonosič na tažné zařízení (+ 10% z celkové ceny)</label
+            >
+          </div>
+        </fieldset>
+
+        <!-- tlačítka spočítat + vynulovat -->
+        <div>
+          <button class="btn-spocitat btn">Spočítat cenu</button>
+          <button class="btn-vynulovat btn">Vynulovat</button>
+        </div>
+
+        <!-- celková částka -->
+        <div class="radek-celkem">
+          <span class="text-celkem"> Celková objednávka:&nbsp;&nbsp;</span
+          ><span class="celkem"></span>
+          <span class="text-celkem">&nbsp;Kč</span>
+        </div>
+
+        <!-- Kolik ochoten zaplatit -->
+        <div class="ochota">
+          <p>Kolik jste ochoten za zápůjčku zaplatit:</p>
+          <div class="radek-celkem">
+            <input
+              type="number"
+              min="0"
+              placeholder="Kč"
+              class="kolik-ochoten-zaplatit input-ochota"
+            />
+          </div>
+        </div>
+        <p class="text-cena-ok">text transparentní</p>
+
+        <!-- Email a odeslat -->
+        <div class="posledni-radek">
+          <input type="email" placeholder="email" class="input-email" />
+          <button class="btn-odeslat btn" disabled>Odeslat objednávku</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
