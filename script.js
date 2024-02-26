@@ -111,7 +111,7 @@ kolikOchotenZaplatit.addEventListener("input", function (e) {
 
 // tlačítko odeslat se stane aktivním pokud je zadán správně email
 email.addEventListener("input", function () {
-  if (email.value.length > 5 && email.value.indexOf("@") > 1) {
+  if (email.value.length > 5 && email.value.indexOf("@") > 1 && suma != 0) {
     btnOdeslat.disabled = false;
   } else {
     btnOdeslat.disabled = true;
